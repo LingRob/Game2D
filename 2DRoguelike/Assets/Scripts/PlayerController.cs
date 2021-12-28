@@ -389,7 +389,7 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine("ClearDuckingState");
         }
-        //clear powerJumpTimer
+        //clear powerJumpTimer if intrerupter or performed
         _powerJumpTimer = 0f;
     }
 
@@ -420,7 +420,9 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        else if (canGlide && _input.y > 0f && _moveDirection.y < 0.2f) // glide adjustment
+
+        // glide adjustment
+        else if (canGlide && _input.y > 0f && _moveDirection.y < 0.2f) 
         {
             if (_currentGlideTime > 0f)
             {
